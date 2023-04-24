@@ -1,4 +1,4 @@
-NAME = all_libft.a
+NAME = libft.a
 
 INC_DIR = ./includes
 INCLUDES += -I $(INC_DIR)
@@ -89,19 +89,19 @@ RM = rm -rf
 all: $(OBJS_DIR) $(NAME)
 
 $(NAME): $(OBJS) 
-	ar rcs $@ $^
+	@ar rcs $@ $^
 
 $(OBJS): $(OBJS_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJS_DIR):
 	@mkdir $@
 
 clean:
-	$(RM) $(OBJS)
-	$(RM) $(OBJS_DIR)
+	@$(RM) $(OBJS)
+	@$(RM) $(OBJS_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
