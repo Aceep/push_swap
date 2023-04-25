@@ -27,7 +27,9 @@ PUSH_DIR = ./push_swp
 CHECK_DIR = ./checker
 
 #Sources 
-SRCS = push_swap.c \
+SRCS += push_swap.c
+SRCS += error_message.c
+SRCS += check_arg.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)

@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 18:23:16 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/24 13:48:43 by alycgaut         ###   ########.fr       */
+/*   Created: 2023/04/25 15:26:03 by alycgaut          #+#    #+#             */
+/*   Updated: 2023/04/25 15:27:19 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 # endif

@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:31:36 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/24 14:35:33 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:31:31 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,14 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * nb);
 }
-/*
-int	main(int ac, char **av)
-{
-	(void)ac;
-	if (av[1])
-	{
-		ft_putnb(atoi(av[1]));
-		ft_putchar('\n');
-		ft_putnb(ft_atoi(av[1]));
-	}
-	return (0);
-}*/
+
+// int	main(int ac, char **av)
+// {
+// 	(void)ac;
+// 	if (av[1])
+// 	{
+// 		printf("%d\n", atoi(av[1]));
+// 		printf("%d\n", ft_atoi(av[1]));
+// 	}
+// 	return (0);
+// }

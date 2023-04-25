@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:22:24 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/25 15:37:11 by alycgaut         ###   ########.fr       */
+/*   Created: 2023/04/25 15:21:57 by alycgaut          #+#    #+#             */
+/*   Updated: 2023/04/25 15:29:47 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include <limits.h>
-# include "../libft/includes/ft_printf.h"
-# include "../libft/includes/get_next_line.h"
-# include "../libft/includes/libft.h"
-
-typedef struct s_stack
+void	error(void)
 {
-	int				value;
-	struct s_stack	*next;
-}t_stack;
-
-//Check arg
-int		check_args(const char **av);
-int	check_int_size(const char *av);
-t_stack	new_stack(char *arg);
-
-//Error
-void	error(void);
-
-#endif
+	ft_printf("Error\n");
+}

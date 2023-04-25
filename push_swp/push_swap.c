@@ -1,25 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/25 15:21:50 by alycgaut          #+#    #+#             */
+/*   Updated: 2023/04/25 15:21:51 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
-
-int	check_args(char **av)
-{
-	av ++;
-	while (*av)
-	{
-		while (**av)
-		{
-			if (!ft_isdigit(**av))
-				return (1);
-			(*av)++;
-		}
-		av ++;
-	}
-	return (0);
-}
-
-void	error(void)
-{
-	ft_printf("Error");
-}
 
 int	main(int ac, char **av)
 {
