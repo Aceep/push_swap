@@ -70,3 +70,4 @@ clean:
 fclean : clean
 	@$(RM) $(NAME)
 
+aclean : fclean lclean

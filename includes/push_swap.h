@@ -20,6 +20,7 @@
 typedef struct s_stack
 {
 	int				value;
+	int				index;
 	struct s_stack	*next;
 }t_stack;
 
@@ -29,10 +30,16 @@ int		check_int_size(const char *av, int sign);
 int		check_letters(const char *av);
 
 //Create list
-t_stack	new_stack(char *arg);
+t_stack	*new_stack(char *arg);
 t_stack	*create_list(char **av);
+t_stack	*get_stack_bottom(t_stack *stack);
+void	stack_add_back(t_stack **stack, t_stack *new);
+int	get_stack_size(t_stack	*stack);
 
 //Error
 void	error(void);
+
+//Free
+void	free_stack(t_stack **a);
 
 #endif
