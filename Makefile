@@ -30,6 +30,7 @@ CHECK_DIR = ./checker
 SRCS += push_swap.c
 SRCS += error_message.c
 SRCS += check_arg.c
+SRCS += create_list.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)
@@ -66,6 +67,6 @@ lclean :
 clean:
 	@$(RM) $(OBJS_DIR)
 
-fclean : lclean clean
+fclean : clean
 	@$(RM) $(NAME)
 
