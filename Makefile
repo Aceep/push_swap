@@ -23,7 +23,7 @@ HEADERS += push_swap.h
 vpath %.h $(INCLUDES_DIR)
 
 #Sources Directories
-PUSH_DIR = ./push_swp
+PUSH_DIR = ./push
 CHECK_DIR = ./checker
 
 #Sources 
@@ -31,6 +31,10 @@ SRCS += push_swap.c
 SRCS += error_message.c
 SRCS += check_arg.c
 SRCS += create_list.c
+SRCS += swap.c
+SRCS += rotate.c
+SRCS += rotate_reverse.c
+SRCS += stack_utils.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)

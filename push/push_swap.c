@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:21:50 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/26 16:21:42 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:22:36 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,11 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	free_stack(t_stack **a)
-{
-	t_stack	*tmp;
-
-	if (!a | !(*a))
-		return ;
-	while (*a)
-	{
-		tmp = (*a)->next;
-		free(*a);
-		*a = tmp;
-	}
-	*a = NULL;
-}
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int	size_stack;
+	int		size_stack;
 
 	if (ac != 1 && check_args(av) == 0)
 	{
@@ -49,11 +35,14 @@ int	main(int ac, char **av)
 		a = create_list(av);
 		size_stack = get_stack_size(a);
 		ft_printf("%d = size\n", size_stack);
-		// while (a)
-		// {
-		// 	ft_printf("%d\n", a->value);
-		// 	a = a->next;
-		// }
+		rra(&a);
+		while (size_stack != 1)
+		{
+			ft_printf("%d\n", a->value);
+			a = a->next;
+			size_stack --;
+		}
+		ft_printf("%d\n", a->value);
 		if (is_sorted(a) == 1)
 			return (free_stack(&a), 0);
 		return (free_stack(&a), free_stack(&b), ft_printf("OK\n"), 0);
