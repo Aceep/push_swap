@@ -40,12 +40,12 @@ void	free_stack(t_stack **a)
 int	main(int ac, char **av)
 {
 	t_stack	*a;
-	//t_stack	*b;
+	t_stack	*b;
 	int	size_stack;
 
 	if (ac != 1 && check_args(av) == 0)
 	{
-		//b = NULL;
+		b = NULL;
 		a = create_list(av);
 		size_stack = get_stack_size(a);
 		ft_printf("%d = size\n", size_stack);
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 		// }
 		if (is_sorted(a) == 1)
 			return (free_stack(&a), 0);
-		return (free_stack(&a), ft_printf("OK\n"), 0);
+		return (free_stack(&a), free_stack(&b), ft_printf("OK\n"), 0);
 	}
 	else if (ac != 1 && check_args(av) == 1)
 		return (error(), 0);

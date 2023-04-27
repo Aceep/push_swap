@@ -19,11 +19,8 @@ int	check_args(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (ft_strlen(av[i]) > 1)
-		{
-			if (check_letters(av[i]) == 1)
-				return (1);
-		}
+		if (check_letters(av[i]) == 1)
+			return (1);
 		i ++;
 	}
 	return (0);
