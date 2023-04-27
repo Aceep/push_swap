@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:22:24 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/27 16:29:37 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:40:07 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 int		check_args(char **av);
 int		check_int_size(const char *av, int sign);
 int		check_letters(const char *av);
+int		same_numbers(char **av);
 
 //Create List
 t_stack	*new_stack(char *arg);
@@ -65,5 +66,8 @@ void	rrr(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack	**b);
 void	pb(t_stack **b, t_stack	**a);
+
+//Sort
+void	push_swap(t_stack **a, t_stack **b, int size_stack);
 
 #endif

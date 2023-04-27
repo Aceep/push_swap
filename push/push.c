@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:58 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/27 16:36:49 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:45:26 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
-	if (b && a)
+	if (*b)
 	{
 		tmp = *b;
 		*b = (*b)->next;

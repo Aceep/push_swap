@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:22:11 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/26 14:56:42 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:04:18 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	check_args(char **av)
 			return (1);
 		i ++;
 	}
+	if (same_numbers(av) == 1)
+		return (1);
 	return (0);
 }
 
@@ -60,5 +62,25 @@ int	check_int_size(const char *av, int sign)
 	else if (sign == 0 && ft_strlen (av) >= 10
 		&& ft_strncmp(av, "2147483647", 11) > 0)
 		return (1);
+	return (0);
+}
+
+int	same_numbers(char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (av[i])
+	{
+		j = 1;
+		while (j < i)
+		{
+			if (strcmp(av[i], av[j]) == 0)
+				return (1);
+			j ++;
+		}
+		i ++;
+	}
 	return (0);
 }
