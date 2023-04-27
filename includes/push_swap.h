@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:22:24 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/27 16:15:24 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:29:37 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ void	reverse_rotate(t_stack **stack);
 void	rra(t_stack **stack);
 void	rrb(t_stack **stack);
 void	rrr(t_stack **a, t_stack **b);
+
+//Push
+void	push(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack	**b);
+void	pb(t_stack **b, t_stack	**a);
 
 #endif

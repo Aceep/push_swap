@@ -35,6 +35,7 @@ SRCS += swap.c
 SRCS += rotate.c
 SRCS += rotate_reverse.c
 SRCS += stack_utils.c
+SRCS += push.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)
