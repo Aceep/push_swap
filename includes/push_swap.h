@@ -17,10 +17,16 @@
 # include "../libft/includes/get_next_line.h"
 # include "../libft/includes/libft.h"
 
+# include <limits.h>
+
 typedef struct s_stack
 {
 	int				value;
 	int				index;
+	int				position_in_stack;
+	int				target_position;
+	int				cost_in_a;
+	int				cost_in_b;
 	struct s_stack	*next;
 }t_stack;
 
@@ -69,5 +75,11 @@ void	pb(t_stack **b, t_stack	**a);
 
 //Sort
 void	push_swap(t_stack **a, t_stack **b, int size_stack);
+void	sort(t_stack **a, t_stack **b, int size_stack);
+void	get_target_position(t_stack **a, t_stack **b);
+void	assign_position(t_stack **stack);
+void	push_all_in_b(t_stack **a, t_stack **b, int size_stack);
+void	get_index(t_stack *a, int size_stack);
+int	is_sorted(t_stack *stack);
 
 #endif

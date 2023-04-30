@@ -48,6 +48,7 @@ SRCS += rotate.c
 SRCS += rotate_reverse.c
 SRCS += stack_utils.c
 SRCS += push.c
+SRCS += sort_position.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)
@@ -88,3 +89,5 @@ fclean : clean
 	@$(RM) $(NAME)
 
 aclean : fclean lclean
+
+re : fclean all

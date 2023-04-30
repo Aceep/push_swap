@@ -21,6 +21,10 @@ t_stack	*new_stack(char *arg)
 		return (NULL);
 	new->value = ft_atoi(arg);
 	new->index = 0;
+	new->position_in_stack = -1;
+	new->target_position = -1;
+	new->cost_in_a = -1;
+	new->cost_in_b = -1;
 	new->next = NULL;
 	return (new);
 }
