@@ -84,18 +84,18 @@ int	main(int ac, char **av)
 		b = NULL;
 		a = create_list(av);
 		size_stack = get_stack_size(a);
-		ft_printf("%d = size\n", size_stack);
+		//ft_printf("%d = size\n", size_stack);
 		if (is_sorted(a) == 1)
 			return (free_stack(&a), 0);
 		get_index(a, size_stack);
 		push_swap(&a, &b, size_stack);
-		while (a)
-		{
-			ft_printf("%d,", a->value);
-			ft_printf("index = %d\n", a->index);
-			ft_printf("position = %d\n", a->position_in_stack);
-			a = a->next;
-		}
+		// while (a)
+		// {
+		// 	ft_printf("%d,", a->value);
+		// 	//ft_printf("index = %d\n", a->index);
+		// 	//ft_printf("position = %d\n", a->position_in_stack);
+		// 	a = a->next;
+		// }
 		// ft_printf("%d,", a->value);
 		// ft_printf("index = %d\n", a->index);
 		// ft_printf("position = %d\n", a->position_in_stack);
