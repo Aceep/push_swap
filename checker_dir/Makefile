@@ -5,67 +5,58 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/27 16:40:43 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/03 16:47:56 by alycgaut         ###   ########.fr        #
+#    Created: 2023/05/03 12:25:00 by alycgaut          #+#    #+#              #
+#    Updated: 2023/05/03 16:46:13 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#Project name 
-NAME = push_swap
+
+#Project Name
+NAME = checker
 
 #Compiler
-CC = cc 
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 #Remove
 RM = rm -rf
 
 #Librairies
-LIB_DIR = ./libft
-LIBFT = ./libft/libft.a
+LIB_DIR = ../libft
+LIBFT = $(LIB_DIR)/libft.a
 LDFLAGS = -L $(LIB_DIR) -lft
 
 #Includes
-INCLUDES_DIR = ./includes
-INCLUDES += -I $(INCLUDES_DIR)
+INCLUDES += -I checker.h
 INCLUDES += -I $(LIB_DIR)/includes
+INCLUDES += -I ../includes
 
-#Headers 
-HEADERS += push_swap.h 
+#HEADERS
+HEADERS += checker.h
 vpath %.h $(INCLUDES_DIR)
 
-#Sources Directories
-PUSH_DIR = ./push
-CHECK_DIR = ./checker_dir
-
-#Sources 
-SRCS += check_arg.c
-SRCS += cost.c
+#Sources
+SRCS += checker.c
 SRCS += create_list.c
-SRCS += error_message.c
-SRCS += main.c
-SRCS += position.c
-SRCS += push_swap.c
-SRCS += push.c
-SRCS += rotate_reverse.c
-SRCS += rotate.c
-SRCS += sort_position.c
+SRCS += check_arg.c
 SRCS += stack_utils.c
+SRCS += error_message.c
 SRCS += swap.c
-#SRCS += checker.c
+SRCS += rotate.c
+SRCS += rotate_reverse.c
+SRCS += push.c
 
-#Vpath Sources
+#Source Dir
+PUSH_DIR = ../push
 vpath %.c $(PUSH_DIR)
-#vpath %.c $(CHECK_DIR)
 
 #Objects
 OBJS_DIR = ./objs
 OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(SRCS))
-#CHECK_OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(CHECK_SRCS))
 
 #Rules
-all: $(LIBFT) $(NAME)
-	@echo "all done"
+all: $(NAME)
+	@mv checker ..
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $^ $(LDFLAGS) $(INCLUDES) -o $@
@@ -73,17 +64,9 @@ $(NAME): $(OBJS)
 $(OBJS): $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-#Rule Libft
-$(LIBFT):
-	@make --no-print-directory -C $(LIB_DIR)
-
 #Object Directory
 $(OBJS_DIR):
 	@mkdir $(OBJS_DIR)
-
-#Clean Lib
-lclean : 
-	@make --no-print-directory fclean -C $(LIB_DIR)
 
 #Clean 
 clean:
@@ -92,11 +75,4 @@ clean:
 fclean : clean
 	@$(RM) $(NAME)
 
-aclean : fclean lclean
-	@$(RM) checker
-
 re : fclean all
-
-bonus : all
-	@make --no-print-directory -C $(CHECK_DIR)
-	

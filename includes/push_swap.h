@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:22:24 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/27 17:40:07 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:09:14 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,18 @@ void	get_target_position(t_stack **a, t_stack **b);
 void	assign_position(t_stack **stack);
 void	push_all_in_b(t_stack **a, t_stack **b, int size_stack);
 void	get_index(t_stack *a, int size_stack);
-int	is_sorted(t_stack *stack);
+void	rotate_a(t_stack **a, int ca);
+void	rotate_b(t_stack **b, int cb);
+void	lowest_in_first(t_stack **a, int lowest);
+void	get_order(t_stack **a);
+
+//Utils
+int		abs(int nb);
+int		is_sorted(t_stack *stack);
+
+//Cost
+void	make_cheapest(t_stack **a, t_stack **b, int ca, int cb);
+void	cheapest_cost(t_stack **a, t_stack **b);
+void	cost(t_stack **a, t_stack **b);
 
 #endif
