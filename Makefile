@@ -22,7 +22,7 @@ RM = rm -rf
 
 #Librairies
 LIB_DIR = ./libft
-LIBFT = ./libft/all_libft.a
+LIBFT = ./libft/libft.a
 LDFLAGS = -L $(LIB_DIR) -lft
 
 #Includes

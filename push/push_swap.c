@@ -104,6 +104,6 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	else if (ac != 1 && check_args(av) == 1)
-		return (error(), 0);
+		return (error(), EXIT_FAILURE);
 	return (0);
 }

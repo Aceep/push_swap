@@ -20,11 +20,11 @@ int	check_args(char **av)
 	while (av[i])
 	{
 		if (check_letters(av[i]) == 1)
-			return (ft_printf("check letter"), 1);
+			return (1);
 		i ++;
 	}
 	if (same_numbers(av) == 1)
-		return (ft_printf("same num"), 1);
+		return (1);
 	return (0);
 }
 
