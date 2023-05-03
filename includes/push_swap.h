@@ -56,6 +56,10 @@ void	sa(t_stack **stack);
 void	sb(t_stack **stack);
 void	ss(t_stack **stack_a, t_stack **stack_b);
 
+//Swap Three
+void	sort_three(t_stack **a);
+int	find_highest(t_stack **a);
+
 //Rotate
 void	rotate(t_stack **stack);
 void	ra(t_stack **stack);

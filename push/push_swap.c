@@ -16,7 +16,9 @@ void	push_swap(t_stack **a, t_stack **b, int size_stack)
 {
 	if (size_stack == 2 && !(is_sorted(*a)))
 		sa(a);
-	else if (size_stack >= 3 && !(is_sorted(*a)))
+	else if (size_stack == 3 && !(is_sorted(*a)))
+		sort_three(a);
+	else if (size_stack > 3 && !(is_sorted(*a)))
 		sort(a, b, size_stack);
 }
 
@@ -52,9 +54,22 @@ void	get_index(t_stack *a, int size_stack)
 void	push_all_in_b(t_stack **a, t_stack **b, int size_stack)
 {
 	int	pushed;
+	int	i;
 
+	i = 0;
 	pushed = 0;
-	while (size_stack - pushed > 2)
+	while (size_stack >= 6 && i < size_stack && pushed < size_stack / 2)
+	{
+		if ((*a)->index <= size_stack / 2)
+		{
+			pb(b, a);
+			pushed ++;
+		}
+		else
+			ra(a);
+		i ++;
+	}
+	while (pushed < size_stack - 3)
 	{
 		pb(b, a);
 		pushed ++;

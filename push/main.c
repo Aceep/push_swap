@@ -45,6 +45,7 @@ int	main(int ac, char **av)
 			return (free_stack(&a), 0);
 		get_index(a, size_stack);
 		push_swap(&a, &b, size_stack);
+		//  
 		free_stack(&a);
 		free_stack(&b);
 		return (0);

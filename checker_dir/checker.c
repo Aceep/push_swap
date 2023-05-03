@@ -23,30 +23,30 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	exec_move(t_stack *a, t_stack *b, char *buf)
+void	exec_move(t_stack **a, t_stack **b, char *buf)
 {
 	if (ft_strcmp("sa\n", buf) == 0)
-		sa(&a);
+		sa(a);
 	else if (ft_strcmp("sb\n", buf) == 0)
-		sb(&b);
+		sb(b);
 	else if (ft_strcmp("ss\n", buf) == 0)
-		ss(&a, &b);
+		ss(a, b);
 	else if (ft_strcmp("pa\n", buf) == 0)
-		pa(&a, &b);
+		pa(a, b);
 	else if (ft_strcmp("pb\n", buf) == 0)
-		pb(&b, &a);
+		pb(b, a);
 	else if (ft_strcmp("ra\n", buf) == 0)
-		ra(&a);
+		ra(a);
 	else if (ft_strcmp("rb\n", buf) == 0)
-		rb(&b);
+		rb(b);
 	else if (ft_strcmp("rr\n", buf) == 0)
-		rr(&a, &b);
+		rr(a, b);
 	else if (ft_strcmp("rra", buf) == 0)
-		rra(&a);
+		rra(a);
 	else if (ft_strcmp("rrb", buf) == 0)
-		rrb(&b);
+		rrb(b);
 	else if (ft_strcmp("rrr", buf) == 0)
-		rrr(&a, &b);
+		rrr(a, b);
 }
 
 void	read_move(t_stack *a, t_stack *b)
@@ -55,7 +55,10 @@ void	read_move(t_stack *a, t_stack *b)
 
 	buf = malloc(sizeof(char) * 3);
 	while (read(0, buf, 3))
-		exec_move(a, b, buf);
+	{
+		//ft_printf("%s", buf);
+		exec_move(&a, &b, buf);
+	}
 	close(0);
 }
 

@@ -10,7 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-
 #Project Name
 NAME = checker
 
@@ -27,7 +26,7 @@ LIBFT = $(LIB_DIR)/libft.a
 LDFLAGS = -L $(LIB_DIR) -lft
 
 #Includes
-INCLUDES += -I checker.h
+#INCLUDES += -I checker.h
 INCLUDES += -I $(LIB_DIR)/includes
 INCLUDES += -I ../includes
 
