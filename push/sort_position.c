@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:46:41 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/03 12:09:07 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:24:44 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,42 +83,10 @@ void	get_order(t_stack **a)
 	lowest_in_first(a, lowest);
 }
 
-int	find_highest(t_stack **a)
-{
-	t_stack *tmp;
-	int	high;
-
-	tmp = *a;
-	high = 0;
-	while (tmp)
-	{
-		if (tmp->index > high)
-			high = tmp->index;
-		tmp = tmp->next;
-	}
-	return (high);
-}
-void	sort_three(t_stack **a)
-{
-	int	high;
-
-	high = find_highest(a);
-	if (is_sorted(*a))
-		return ;
-	if ((*a)->index == high)
-		ra(a);
-	else if ((*a)->next->index == high)
-		rra(a);
-	if ((*a)->index > (*a)->next->index)
-		sa(a);
-}
-
 void	sort(t_stack **a, t_stack **b, int size_stack)
 {
 	push_all_in_b(a, b, size_stack);
 	sort_three(a);
-	// if (!(is_sorted(*a)))
-	// 	sa(a);
 	while (*b)
 	{
 		get_target_position(a, b);

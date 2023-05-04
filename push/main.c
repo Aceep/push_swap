@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:40:57 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/03 11:52:09 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:32:38 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(int ac, char **av)
 			return (free_stack(&a), 0);
 		get_index(a, size_stack);
 		push_swap(&a, &b, size_stack);
-		//  
 		free_stack(&a);
 		free_stack(&b);
 		return (0);

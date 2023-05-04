@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:59:12 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/27 16:22:07 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:37:32 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	reverse_rotate(t_stack **stack)
 	t_stack	*before_end;
 	t_stack	*tmp;
 
+	if (get_stack_size(*stack) < 2)
+		return ;
 	end = get_stack_bottom(*stack);
 	before_end = get_stack_before_bottom(*stack);
 	tmp = *stack;
@@ -42,5 +44,5 @@ void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_printf("rra\n");
+	ft_printf("rrr\n");
 }

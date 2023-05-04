@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:22:24 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/03 12:09:14 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:31:51 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 
 //Swap Three
 void	sort_three(t_stack **a);
-int	find_highest(t_stack **a);
+int		find_highest(t_stack **a);
 
 //Rotate
 void	rotate(t_stack **stack);
@@ -88,6 +88,8 @@ void	rotate_a(t_stack **a, int ca);
 void	rotate_b(t_stack **b, int cb);
 void	lowest_in_first(t_stack **a, int lowest);
 void	get_order(t_stack **a);
+int		find_highest(t_stack **a);
+void	sort_three(t_stack **a);
 
 //Utils
 int		abs(int nb);

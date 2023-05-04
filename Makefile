@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/27 16:40:43 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/03 16:47:56 by alycgaut         ###   ########.fr        #
+#    Updated: 2023/05/04 12:30:50 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ SRCS += rotate.c
 SRCS += sort_position.c
 SRCS += stack_utils.c
 SRCS += swap.c
-#SRCS += checker.c
+SRCS += sort_three.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)

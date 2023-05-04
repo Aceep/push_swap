@@ -6,11 +6,11 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:46:57 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/03 16:48:35 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:11:14 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "checker.h"
 
 int	is_sorted(t_stack *stack)
 {
@@ -23,41 +23,42 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	exec_move(t_stack **a, t_stack **b, char *buf)
+int	exec_move(t_stack **a, t_stack **b, char *buf)
 {
 	if (ft_strcmp("sa\n", buf) == 0)
-		sa(a);
+		return (swap(*a), 0);
 	else if (ft_strcmp("sb\n", buf) == 0)
-		sb(b);
+		return (swap(*b), 0);
 	else if (ft_strcmp("ss\n", buf) == 0)
-		ss(a, b);
+		return (swap(*a), swap(*b), 0);
 	else if (ft_strcmp("pa\n", buf) == 0)
-		pa(a, b);
+		return (push(a, b), 0);
 	else if (ft_strcmp("pb\n", buf) == 0)
-		pb(b, a);
+		return (push(b, a), 0);
 	else if (ft_strcmp("ra\n", buf) == 0)
-		ra(a);
+		return (rotate(a), 0);
 	else if (ft_strcmp("rb\n", buf) == 0)
-		rb(b);
+		return (rotate(b), 0);
 	else if (ft_strcmp("rr\n", buf) == 0)
-		rr(a, b);
-	else if (ft_strcmp("rra", buf) == 0)
-		rra(a);
-	else if (ft_strcmp("rrb", buf) == 0)
-		rrb(b);
-	else if (ft_strcmp("rrr", buf) == 0)
-		rrr(a, b);
+		return (rotate(a), rotate(b), 0);
+	else if (ft_strcmp("rra\n", buf) == 0)
+		return (reverse_rotate(a), 0);
+	else if (ft_strcmp("rrb\n", buf) == 0)
+		return (reverse_rotate(b), 0);
+	else if (ft_strcmp("rrr\n", buf) == 0)
+		return (reverse_rotate(a), reverse_rotate(b), 0);
+	return (0);
 }
 
-void	read_move(t_stack *a, t_stack *b)
+void	read_move(t_stack **a, t_stack **b)
 {
-	char	*buf;
+	char	*gnl_return;
 
-	buf = malloc(sizeof(char) * 3);
-	while (read(0, buf, 3))
+	gnl_return = get_next_line(0);
+	while (gnl_return)
 	{
-		//ft_printf("%s", buf);
-		exec_move(&a, &b, buf);
+		exec_move(a, b, gnl_return);
+		gnl_return = get_next_line(0);
 	}
 	close(0);
 }
@@ -71,8 +72,8 @@ int	main(int ac, char **av)
 	{
 		b = NULL;
 		a = create_list(av);
-		read_move(a, b);
-		if (is_sorted(a))
+		read_move(&a, &b);
+		if (is_sorted(a) && b == NULL)
 			return (ft_printf("OK\n"), 0);
 		else
 			return (ft_printf("KO\n"), 0);
