@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 12:25:00 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/03 16:46:13 by alycgaut         ###   ########.fr        #
+#    Updated: 2023/05/04 15:30:01 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,8 +70,5 @@ $(OBJS_DIR):
 #Clean 
 clean:
 	@$(RM) $(OBJS_DIR)
-
-fclean : clean
-	@$(RM) $(NAME)
 
 re : fclean all

@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/27 16:40:43 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/04 12:30:50 by alycgaut         ###   ########.fr        #
+#    Updated: 2023/05/04 15:32:04 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,12 +56,10 @@ SRCS += sort_three.c
 
 #Vpath Sources
 vpath %.c $(PUSH_DIR)
-#vpath %.c $(CHECK_DIR)
 
 #Objects
 OBJS_DIR = ./objs
 OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(SRCS))
-#CHECK_OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(CHECK_SRCS))
 
 #Rules
 all: $(LIBFT) $(NAME)
@@ -89,14 +87,18 @@ lclean :
 clean:
 	@$(RM) $(OBJS_DIR)
 
+#Clean Objets and Exe
 fclean : clean
 	@$(RM) $(NAME)
 
+#Clean All
 aclean : fclean lclean
 	@$(RM) checker
+	@make --no-print-directory -C $(CHECK_DIR) clean
 
 re : fclean all
 
+#Compile Checker
 bonus : all
 	@make --no-print-directory -C $(CHECK_DIR)
 	
