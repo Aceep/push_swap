@@ -58,6 +58,7 @@ void	read_move(t_stack **a, t_stack **b)
 	while (gnl_return)
 	{
 		exec_move(a, b, gnl_return);
+		free (gnl_return);
 		gnl_return = get_next_line(0);
 	}
 	close(0);
