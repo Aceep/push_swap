@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:46:57 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/04 15:11:14 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:28:34 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ int	main(int ac, char **av)
 		a = create_list(av);
 		read_move(&a, &b);
 		if (is_sorted(a) && b == NULL)
-			return (ft_printf("OK\n"), 0);
+			return (ft_printf("OK\n"), free_stack(&a), free_stack(&b), 0);
 		else
-			return (ft_printf("KO\n"), 0);
+			return (ft_printf("KO\n"), free_stack(&a), free_stack(&b), 0);
 	}
-	else if (ac != 1)
+	else if (ac != 1 && check_args(av) == 1)
 		return (error(), EXIT_FAILURE);
 	return (0);
 }

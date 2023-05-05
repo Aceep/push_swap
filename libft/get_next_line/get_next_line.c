@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:22:35 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/24 14:34:10 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:31:16 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*get_line(char **prev_read)
 	line = ft_substr_gnl(*prev_read, 0, (i + ft_end_file(*prev_read)));
 	if (!line)
 	{
-		free (line);
+		free (*prev_read);
 		return (NULL);
 	}
 	return (line);
@@ -57,7 +57,7 @@ char	*get_end(char **prev_read)
 	p_read = ft_substr_gnl(*prev_read, i + 1, ft_strlen_gnl(*prev_read) - i);
 	if (!p_read)
 	{
-		free (p_read);
+		free (*prev_read);
 		return (NULL);
 	}
 	free (*prev_read);
