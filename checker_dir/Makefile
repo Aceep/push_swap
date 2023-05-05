@@ -20,6 +20,22 @@ CFLAGS = -Wall -Wextra -Werror
 #Remove
 RM = rm -rf
 
+# Reset
+NC = \033[0m
+
+# Colors
+BYELLOW = \033[1;33m
+BGREEN = \033[1;32m
+BBLUE = \033[1;34m
+BRED = \033[1;31m
+BPURPLE = \033[1;35m
+BCYAN = \033[1;36m
+BBLACK = \033[1;30m
+BWHITE = \033[1;37m
+
+# One Line Output
+OL =\e[1A\r\033[K
+
 #Librairies
 LIB_DIR = ../libft
 LIBFT = $(LIB_DIR)/libft.a
@@ -49,6 +65,10 @@ SRCS += push.c
 PUSH_DIR = ../push
 vpath %.c $(PUSH_DIR)
 
+#Counter
+TOTAL = $(words $(SRCS))
+COUNT = 0
+
 #Objects
 OBJS_DIR = ./objs
 OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(SRCS))
@@ -62,6 +82,10 @@ $(NAME): $(OBJS)
 
 $(OBJS): $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@if [ $(COUNT) = 0 ]; then echo ""; fi
+	@$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
+	@$(eval PERCENT:=$(shell echo $$((100*$(COUNT)/$(TOTAL)))))
+	@printf "$(OL)$(BCYAN)[%2d/%2d] %3d%%\t$(CYAN)Compiling %s$(NC)\n" $(COUNT) $(TOTAL) $(PERCENT) $<
 
 #Object Directory
 $(OBJS_DIR):
