@@ -30,37 +30,34 @@ int	check_args(char **av)
 
 int	check_letters(const char *av)
 {
-	int	sign;
+
 	int	i;
 
 	i = 0;
-	sign = 0;
-	if (av[i] == '-' || av[i] == '+')
-	{
-		if ((av[i]) == '-')
-			sign = 1;
-		i ++;
-	}
-	while (av[i] == '0' && ft_strlen(av) != 1)
-		i ++;
-	if (check_int_size(av, sign) == 1 || !ft_isdigit(av[i]))
+	// sign = 0;
+
+	// while (av[i] == '0' && ft_strlen(av) != 1)
+	// 	i ++;
+	if (check_int_size(av) == 1)
 		return (1);
+	if (av[i] == '-' || av[i] == '+')
+		i ++;
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]))
 			return (1);
 		i ++;
 	}
+	if (ft_atol(av) == 0)
+		return (0);
 	return (0);
 }
 
-int	check_int_size(const char *av, int sign)
+int	check_int_size(const char *av)
 {
-	if (sign == 1 && ft_strlen (av) >= 10
-		&& ft_strncmp(av, "-2147483648", 11) > 0)
+	if (ft_atol(av) < (long long)INT_MIN)
 		return (1);
-	else if (sign == 0 && ft_strlen (av) >= 10
-		&& ft_strncmp(av, "2147483647", 11) > 0)
+	else if (ft_atol(av) > (long long)INT_MAX)
 		return (1);
 	return (0);
 }
@@ -76,7 +73,7 @@ int	same_numbers(char **av)
 		j = 1;
 		while (j < i)
 		{
-			if (strcmp(av[i], av[j]) == 0)
+			if (av[i] && av[j] && strcmp(av[i], av[j]) == 0)
 				return (1);
 			j ++;
 		}

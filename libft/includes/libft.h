@@ -42,6 +42,7 @@ int		ft_isalnum(int c);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_atoi(const char *c);
+long long int		ft_atol(const char *c);
 char	*ft_strstr(const char *str, const char *tofind);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *tofind, size_t n);

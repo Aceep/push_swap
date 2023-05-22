@@ -32,7 +32,7 @@ typedef struct s_stack
 
 //Check Arg
 int		check_args(char **av);
-int		check_int_size(const char *av, int sign);
+int		check_int_size(const char *av);
 int		check_letters(const char *av);
 int		same_numbers(char **av);
 

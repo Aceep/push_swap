@@ -72,7 +72,8 @@ SRCS = ft_printf.c \
 	ft_putchar_bonus.c \
 	ft_strcmp_bonus.c \
 	ft_memccpy_bonus.c \
-	ft_itoa_base.c
+	ft_itoa_base.c \
+	ft_atol.c \
 
 vpath %.c $(PATH_LIBFT)
 vpath %.c $(PATH_GNL)
