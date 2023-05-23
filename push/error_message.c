@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_message.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:21:57 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/04/25 15:29:47 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:58:15 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	error(void)
 {
-	ft_printf("Error\n");
+	ft_printf("\033[1;31mError\n\033[0m");
 }
