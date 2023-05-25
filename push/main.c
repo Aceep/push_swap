@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:40:57 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/04 12:32:38 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:10:11 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	int		size_stack;
 
-	if (ac != 1 && check_args(av) == 0)
+	if (ac >= 1 && check_args(av) == 0)
 	{
 		b = NULL;
 		a = create_list(av);

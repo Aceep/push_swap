@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:22:11 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/24 21:40:47 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/25 17:37:47 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,38 +30,36 @@ int	check_args(char **av)
 
 int	check_letters(const char *av)
 {
-
 	int	i;
 
 	i = 0;
-	// sign = 0;
-
-	// while (av[i] == '0' && ft_strlen(av) != 1)
-	// 	i ++;
 	if (check_int_size(av) == 1)
 		return (1);
 	if ((av[i] == '-' || av[i] == '+') && ft_isdigit(av[i + 1]))
 		i ++;
+	while (av[i] == '0')
+		i++;
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]))
 			return (1);
 		i ++;
 	}
-	// if (ft_atol(av) == 0)
-	// 	return (0);
 	return (0);
 }
 
 int	check_int_size(const char *av)
 {
-	char	*i;
+	int	len;
 
-	i = ft_strdup(av);
-	while (*i == '0')
-		i ++;
-	if (ft_strlen(i) > 11)
-		return (free(i), 1);
+	len = 0;
+	if ((av[len] == '-' || av[len] == '+'))
+		len ++;
+	while (av[len] == '0')
+		len ++;
+	len = ft_strlen(av) - len;
+	if (len > 11)
+		return (1);
 	if (ft_atol(av) < (long long)INT_MIN)
 		return (1);
 	else if (ft_atol(av) > (long long)INT_MAX)
