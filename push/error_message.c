@@ -14,5 +14,6 @@
 
 void	error(void)
 {
-	ft_printf("\033[1;31mError\n\033[0m");
+	ft_printf("Error\n");
+	//ft_printf("\033[1;31mError\n\033[0m");
 }

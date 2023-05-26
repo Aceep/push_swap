@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 	t_stack	*b;
 	int		size_stack;
 
-	if (ac >= 1 && check_args(av) == 0)
+	if (ac > 1 && check_args(av) == 0)
 	{
 		b = NULL;
 		a = create_list(av);
